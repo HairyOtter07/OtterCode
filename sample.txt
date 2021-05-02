@@ -1,8 +1,0 @@
-set: (add_nums, lambda: ((num1, num2), (
-    return: (+: (num1, num2))
-)));
-
-print: (add_nums: (1, 2));
-
-
-# program outputs 3

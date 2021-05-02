@@ -1,9 +1,0 @@
-program             :   statement_list
-statement_list      :   (statement)*
-statement           :   expr SEMI
-expr                :   operator COLON LPAREN (expr (COMMA, expr)*)? RPAREN  | lambda_expr | ID | STRING | NUMBER
-lambda_expr         :   LAMBDA COLON LPAREN lambda_args COMMA lambda_body RPAREN
-lambda_args         :   LPAREN (ID (COMMA ID)*)? RPAREN
-lambda_body         :   LPAREN statement_list RPAREN
-operator            :   ID | arith_op
-arith_op            :   PLUS | MINUS | MUL | DIV | MOD
