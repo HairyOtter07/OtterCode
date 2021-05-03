@@ -1,0 +1,14 @@
+prog = Program(statement list)
+statement = Statement(expr)
+expr = FunCall(func, expr list)             // expr list is args
+        | lambda
+        | set
+        | var_ref
+        | string
+        | number
+func = var_ref | lambda
+lambda = Lambda(id list, statement list)    // id list is formal params, statement list is body
+set = Set(id, expr)                         // id is name, expr is value
+var_ref = Var(id)                           // id is name
+string = String(value)
+number = Number(value)

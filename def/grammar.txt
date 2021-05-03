@@ -5,5 +5,5 @@ expr                :   operator COLON LPAREN (expr (COMMA, expr)*)? RPAREN  | l
 lambda_expr         :   LAMBDA COLON LPAREN lambda_args COMMA lambda_body RPAREN
 lambda_args         :   LPAREN (ID (COMMA ID)*)? RPAREN
 lambda_body         :   LPAREN statement_list RPAREN
-operator            :   ID | arith_op
+operator            :   ID | LPAREN lambda_expr RPAREN | arith_op
 arith_op            :   PLUS | MINUS | MUL | DIV | MOD
