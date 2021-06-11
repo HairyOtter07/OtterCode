@@ -23,7 +23,7 @@ class Token(object):
         self.column = column
 
     def __str__(self):
-        return 'Token({type}, {value}, lineno={lineno}, column={column})'.format(
+        return 'Token({type}, \'{value}\', lineno={lineno}, column={column})'.format(
             type=self.type,
             value=self.value,
             lineno=self.lineno,
