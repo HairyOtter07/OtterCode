@@ -52,6 +52,10 @@ class Lexer(object):
             
             elif self.current_char.isdigit():
                 number = self.get_match(r'-?(0|([1-9]\d*))(\.\d+)?((e|E)(\+|-)?\d+)?')
+                if "." in number.value or "e" in number.value:
+                    number.value = float(number.value)
+                else:
+                    number.value = int(number.value)
                 tokens.append(Token(TokenType.NUMBER, number.value, number.lineno, number.column))
 
             elif self.current_char == "(":
