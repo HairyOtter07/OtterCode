@@ -1,6 +1,5 @@
 program             :   statement_list
-statement_list      :   (statement)*
-statement           :   expr SEMI
+statement_list      :   (expr SEMI)*
 expr                :   operator COLON LPAREN (expr (COMMA, expr)*)? RPAREN  | lambda_expr | set_expr | ID | STRING | NUMBER
 lambda_expr         :   LAMBDA COLON LPAREN lambda_args COMMA lambda_body RPAREN
 lambda_args         :   LPAREN (ID (COMMA ID)*)? RPAREN

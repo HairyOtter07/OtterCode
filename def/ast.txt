@@ -6,9 +6,10 @@ expr = FunCall(func, expr list)             // expr list is args
         | var_ref
         | string
         | number
-func = var_ref | lambda
+func = var_ref | arith_op | lambda
 lambda = Lambda(id list, statement list)    // id list is formal params, statement list is body
 set = Set(id, expr)                         // id is name, expr is value
 var_ref = Var(id)                           // id is name
+arith_op = ArithOp(op)
 string = String(value)
 number = Number(value)

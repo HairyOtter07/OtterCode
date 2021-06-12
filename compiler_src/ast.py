@@ -14,6 +14,11 @@ class FunCall(AST):
         self.func = func
         self.expr_list = expr_list
 
+class ArithOp(AST):
+    def __init__(self, op_token):
+        self.token = op_token
+        self.op = self.token.value
+
 class Var(AST):
     def __init__(self, id_token):
         self.token = id_token

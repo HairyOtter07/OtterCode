@@ -11,8 +11,7 @@ class Lexeme(object):
 class Lexer(object):
     def __init__(self, text):
         self.text = text
-        self.pos = 0
-        self.current_char = self.text[self.pos]
+        self.current_char = self.text[0]
         self.lineno = 1
         self.column = 1
 
@@ -29,11 +28,11 @@ class Lexer(object):
             self.lineno += 1
             self.column = 1
         
-        self.pos += 1
-        if self.pos > len(self.text) - 1:
+        self.text = self.text[1:]
+        if self.text == "":
             self.current_char = None
         else:
-            self.current_char = self.text[self.pos]
+            self.current_char = self.text[0]
             self.column += 1
 
     def get_match(self, pattern):
